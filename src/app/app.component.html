@@ -1,4 +1,14 @@
 
 <!-- <app-footer></app-footer> -->
+
+
+<div class="wrapper {{storedTheme}}">
 <app-header></app-header>
+<div class="custom-control custom-switch theme-swith-wrap">
+    <input  type="checkbox"  class="custom-control-input" id="toggleTheme">
+    <label class="custom-control-label theme-switcher" (click)="setTheme()" for="toggleTheme" [ngClass]="(storedTheme === 'theme-light')?'theme-switcher active' : 'theme-switcher'"></label>
+  </div>
+<div class="">
 <router-outlet></router-outlet>
+</div>
+</div>

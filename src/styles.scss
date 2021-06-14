@@ -8,10 +8,38 @@ html, body {
  }
 body {
     font-family: $primary-font-family !important;
-    color:$primary-page-color;
+   // color:$primary-page-color;
 }
+
+
+.theme-dark {
+    background-color: $bg-theme-dark;
+    color: #fff !important;
+    h1,h2,h3,h4,h5,h6, a, .custom-control-label, .updated-date, .top-menu-rhs > li .nav-link, .rs-header .navbar-nav .nav-item.active .nav-link, .card-small-txt{
+        color:$white;
+    }
+    .rs-header, .card {
+        background-color: $bg-theme-dark;
+    }
+    .theme-switcher  {       
+      border-color:#E6552F;
+      background-color:#E6552F;
+    }
+}
+
+.custom-switch {
+      position: absolute !important;
+      right: 332px;
+      top: 25px;
+  }
+  .custom-control-input:checked~.custom-control-label::before  {       
+    border-color:#E6552F;
+    background-color:#E6552F;
+}
+
+
 h1,h2,h3,h4,h5,h6 {
-    color: #222121;
+    color:$primary-page-color;
 }
 ol,ul {
     list-style-type: none;

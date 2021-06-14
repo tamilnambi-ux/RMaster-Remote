@@ -44,8 +44,62 @@
               </div>
             </div>
     </div>
-<div class="filter-section d-flex justify-content-between align-items-center" *ngIf="showFilter">
-    <div class="d-flex chip-wrap">
+    
+<div class="filter-section" *ngIf="showFilter">
+<div class="row align-items-center">
+
+  <div class="col-1 prev-arrow px-0">
+    <a href="javascript:;" (click)="slickModal.slickGoTo(2)" *ngIf="this.slides.length > 6">
+      <span class="material-icons material-icons-outlined">
+        chevron_left
+        </span>
+      </a>
+  </div>
+  <div class="col-md-9">
+    <ngx-slick-carousel class="carousel" 
+    #slickModal="slick-carousel" 
+    [config]="slideConfig">
+<div ngxSlickItem *ngFor="let slide of slides; trackBy: _trackBy" class="slide">
+<div class="d-flex chip-wrap">
+<div class="chip">
+<span>{{slide.name}}</span> 
+<span class="closebtn" (click)="removeSlide()">&times;</span>
+</div>
+</div>
+</div>
+</ngx-slick-carousel>
+  </div>
+  <div class="col-1 next-arrow px-0">
+    <a href="javascript:;" (click)="slickModal.slickGoTo(2)" *ngIf="this.slides.length > 5">
+      <span class="material-icons material-icons-outlined">
+        chevron_right
+        </span>
+      </a>
+  </div>
+ 
+  
+  <div class="col-md-2 px-0">  
+    <div class="d-flex align-items-center justify-content-end">
+      <div class="add-chip">
+         <a href="javascript:;" class="mr-3" routerLink="../filters">
+             <span class="material-icons material-icons-outlined">  add</span>
+         </a> 
+         <a routerLink="../filters">
+             <span class="material-icons material-icons-outlined">
+                 settings
+                 </span>
+         </a> 
+                      
+     <!-- <button type="button" class="btn subscribe-btn ml-3 btn-transparent"> Manage Filters</button> -->
+     
+ </div>
+</div>
+  </div>
+</div>
+
+
+  
+  <!-- <div class="d-flex chip-wrap">
     <div class="chip">
        <span>Default  Preference</span> 
         <span class="closebtn" onclick="this.parentElement.style.display='none'">&times;</span>
@@ -54,22 +108,8 @@
         <span>Default  Preference</span> 
          <span class="closebtn" onclick="this.parentElement.style.display='none'">&times;</span>
      </div>
-    </div>
-     <div class="d-flex align-items-center">
-         <div class="add-chip">
-            <a href="javascript:;" class="mr-3" routerLink="../filters">
-                <span class="material-icons material-icons-outlined">  add</span>
-            </a> 
-            <a routerLink="../filters">
-                <span class="material-icons material-icons-outlined">
-                    settings
-                    </span>
-            </a> 
-            
-         </div>                 
-        <!-- <button type="button" class="btn subscribe-btn ml-3 btn-transparent"> Manage Filters</button> -->
-        
-    </div>
+    </div> -->
+    
 </div>
 <div class="d-flex flex-wrap mt-3">
 <div class="rs-card" *ngFor="let a of carditems; let i = index">
@@ -105,7 +145,7 @@
             <div class="fs-9 card-small-txt"># CONTENTS : <a href="javascript:;" class="fs-18 underline">10</a></div>            
             <button type="button" class="btn subscribe-btn" (click)="this.subscribe[i] = !this.subscribe[i]" *ngIf="!subscribe[i]"> SUBSCRIBE NOW</button>
             <button type="button" class="btn subscribe-btn subscribed-btn d-flex align-items-center" (click)="this.subscribe[i] = !this.subscribe[i]" *ngIf="subscribe[i]"> <span class="material-icons mr-2">thumb_up </span>
-                 SUBSCRIBEDDSS</button>
+                 SUBSCRIBEDdd</button>
         </div>
         <div class="d-flex align-items-center flex-wrap justify-content-between">
          <div class="fs-10">

@@ -22,12 +22,13 @@ import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { NgxStarRatingModule } from 'ngx-star-rating';
 import { TooltipModule } from 'ngx-bootstrap/tooltip';
 // import { TreeviewModule } from 'ngx-treeview';
-//import { SlickCarouselModule } from 'ngx-slick-carousel';
+import { SlickCarouselModule } from 'ngx-slick-carousel';
 
 
 
 @NgModule({
-  declarations: [HomeComponent,
+  declarations: [
+    HomeComponent,
      TopicSearchComponent, 
      SelectedTopicsComponent, 
      IntrestTopicsComponent, 
@@ -53,7 +54,7 @@ import { TooltipModule } from 'ngx-bootstrap/tooltip';
     NgxStarRatingModule,
     TooltipModule.forRoot(),
    // TreeviewModule.forRoot()
-   //SlickCarouselModule
+  SlickCarouselModule
   ],
   exports: [
     IntrestTopicsComponent,
